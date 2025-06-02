@@ -1,0 +1,18 @@
+# Buck2 build outputs
+.buck-out/
+buck-out/
+
+# Buck2 cache and temporary files
+.buckd/
+.buckjavaargs
+.buckversion
+
+# Buck2 logs
+buck.log
+buck-*.log
+
+# Buck2 daemon files
+.buckpid
+
+# Generated files (if any)
+**/BUCK.autodeps

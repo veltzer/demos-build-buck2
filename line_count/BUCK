@@ -1,0 +1,6 @@
+genrule(
+    name = "count_lines",
+    srcs = ["input.txt"],
+    out = "line_count.txt",
+    cmd = "wc -l < $SRCS > $OUT",
+)
