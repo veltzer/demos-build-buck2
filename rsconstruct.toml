@@ -1,7 +1,14 @@
 # rsconstruct build configuration for this repository.
 
+# line_count/prelude is the facebook/buck2-prelude submodule: upstream
+# third-party sources we neither author nor may reformat. Every processor
+# that walks the tree has to skip it, or the build lints vendored code and
+# fails on issues that are not ours to fix (and that an upstream bump can
+# reintroduce at any time).
+
 [processor.taplo]
 src_dirs = ["."]
+src_exclude_dirs = ["prelude"]
 
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
@@ -11,8 +18,10 @@ src_dirs = [".github/workflows"]
 
 [processor.rumdl]
 src_files = ["README.md"]
+src_exclude_dirs = ["prelude"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.shellcheck]
 src_dirs = ["line_count"]
+src_exclude_dirs = ["prelude"]
