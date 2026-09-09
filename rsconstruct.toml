@@ -1,5 +1,9 @@
 # rsconstruct build configuration for this repository.
 
+[build]
+# src_dirs entries name directories; "." (the whole tree) is a config error
+reject_dot_src_dirs = true
+
 # line_count/prelude is the facebook/buck2-prelude submodule: upstream
 # third-party sources we neither author nor may reformat. Every processor
 # that walks the tree has to skip it, or the build lints vendored code and
@@ -7,8 +11,7 @@
 # reintroduce at any time).
 
 [processor.taplo]
-src_dirs = ["."]
-src_exclude_dirs = ["prelude"]
+src_files = [".rumdl.toml", "rsconstruct.toml"]
 
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
