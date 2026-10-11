@@ -25,6 +25,6 @@ src_exclude_dirs = ["prelude"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-[processor.checker.shellcheck]
+[processor.checker.ishellcheck]
 src_dirs = ["line_count"]
 src_exclude_dirs = ["prelude"]
