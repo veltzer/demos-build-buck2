@@ -4,12 +4,6 @@
 # src_dirs entries name directories; "." (the whole tree) is a config error
 reject_dot_src_dirs = true
 
-# line_count/prelude is the facebook/buck2-prelude submodule: upstream
-# third-party sources we neither author nor may reformat. Every processor
-# that walks the tree has to skip it, or the build lints vendored code and
-# fails on issues that are not ours to fix (and that an upstream bump can
-# reintroduce at any time).
-
 [processor.checker.taplo]
 src_files = [".rumdl.toml", "rsconstruct.toml"]
 
@@ -21,10 +15,8 @@ src_dirs = [".github/workflows"]
 
 [processor.checker.rumdl]
 src_files = ["README.md"]
-src_exclude_dirs = ["prelude"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.checker.ishellcheck]
 src_dirs = ["line_count"]
-src_exclude_dirs = ["prelude"]
